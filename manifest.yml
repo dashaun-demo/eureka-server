@@ -1,0 +1,10 @@
+applications:
+- name: eureka-server
+  memory: 1G
+  buildpack: java_buildpack
+  path: target/eureka-server-0.0.1-SNAPSHOT.jar
+  routes:
+  - route: eureka-server.apps.internal
+  health-check-type: http
+  health-check-http-endpoint: /actuator/health
+  timeout: 120
